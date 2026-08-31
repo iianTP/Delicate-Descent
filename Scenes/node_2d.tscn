@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dem0pu2dtji12"]
+
+[ext_resource type="Shader" uid="uid://idfmkg37485t" path="res://Shaders/crt.gdshader" id="2_hh5uf"]
+[ext_resource type="PackedScene" uid="uid://dngjm7byk34js" path="res://Scenes/menu.tscn" id="3_hh5uf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6whob"]
+viewport_path = NodePath("ColorRect/SubViewportContainer/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u7krg"]
+resource_local_to_scene = true
+shader = ExtResource("2_hh5uf")
+shader_parameter/tex = SubResource("ViewportTexture_6whob")
+shader_parameter/mask_type = 3
+shader_parameter/curve = 0.5
+shader_parameter/sharpness = 0.6666667
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/min_scanline_thickness = 0.5
+shader_parameter/aspect = 0.75
+shader_parameter/wobble_strength = 1.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v1qfn"]
+viewport_path = NodePath("ColorRect/SubViewportContainer/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hh5uf"]
+resource_local_to_scene = true
+shader = ExtResource("2_hh5uf")
+shader_parameter/tex = SubResource("ViewportTexture_v1qfn")
+shader_parameter/mask_type = 3
+shader_parameter/curve = 0.5
+shader_parameter/sharpness = 0.6666667
+shader_parameter/color_offset = 0.0
+shader_parameter/mask_brightness = 1.0
+shader_parameter/scanline_brightness = 1.0
+shader_parameter/min_scanline_thickness = 0.5
+shader_parameter/aspect = 0.75
+shader_parameter/wobble_strength = 1.0
+
+[node name="Main" type="Node2D" unique_id=305123503]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=365537560]
+material = SubResource("ShaderMaterial_u7krg")
+offset_right = 750.0
+offset_bottom = 400.0
+mouse_filter = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="ColorRect" unique_id=1811163613]
+material = SubResource("ShaderMaterial_hh5uf")
+layout_mode = 0
+offset_right = 750.0
+offset_bottom = 400.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="ColorRect/SubViewportContainer" unique_id=213840659]
+handle_input_locally = false
+canvas_item_default_texture_filter = 0
+size = Vector2i(750, 400)
+render_target_update_mode = 4
+
+[node name="Menu" parent="ColorRect/SubViewportContainer/SubViewport" unique_id=206648369 instance=ExtResource("3_hh5uf")]

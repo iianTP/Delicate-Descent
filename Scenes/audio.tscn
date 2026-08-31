@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c07qwofd7t1ac"]
+
+[ext_resource type="Script" uid="uid://dpg22dyo8u28f" path="res://Scripts/Globals/AudioManager.cs" id="1_y8l05"]
+[ext_resource type="AudioStream" uid="uid://bfoq1pyurg2ej" path="res://Assets/Audio/died.ogg" id="2_c8j57"]
+[ext_resource type="AudioStream" uid="uid://vqjg8v5dlrnm" path="res://Assets/Audio/Sleepwalker.ogg" id="3_fqpxi"]
+[ext_resource type="AudioStream" uid="uid://cvbanc3db5du7" path="res://Assets/Audio/WithinDreamscapes.ogg" id="4_4thc6"]
+[ext_resource type="AudioStream" uid="uid://mvofttj2iga3" path="res://Assets/Audio/Observe.ogg" id="5_k46ri"]
+
+[node name="Audio" type="Node2D" unique_id=546901945 node_paths=PackedStringArray("died", "tracks")]
+script = ExtResource("1_y8l05")
+died = NodePath("Died")
+tracks = [NodePath("Sleepwalker"), NodePath("WithinDreamscapes"), NodePath("Observe")]
+
+[node name="Died" type="AudioStreamPlayer2D" parent="." unique_id=1208702600]
+stream = ExtResource("2_c8j57")
+attenuation = 1e-05
+panning_strength = 0.0
+
+[node name="Sleepwalker" type="AudioStreamPlayer2D" parent="." unique_id=225557425]
+stream = ExtResource("3_fqpxi")
+attenuation = 1e-05
+panning_strength = 0.0
+
+[node name="WithinDreamscapes" type="AudioStreamPlayer2D" parent="." unique_id=1295339423]
+stream = ExtResource("4_4thc6")
+attenuation = 1e-05
+panning_strength = 0.0
+
+[node name="Observe" type="AudioStreamPlayer2D" parent="." unique_id=521791324]
+stream = ExtResource("5_k46ri")
+attenuation = 1e-05
+panning_strength = 0.0

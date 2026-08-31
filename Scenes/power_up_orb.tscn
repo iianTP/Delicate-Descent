@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bmhvdxqghv4mx"]
+
+[ext_resource type="Script" uid="uid://cn6m6gx5555m0" path="res://Scripts/PowerUps/PowerUpOrb.cs" id="1_v5awi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kwqjx"]
+
+[node name="PowerUpOrb" type="Area2D" unique_id=1165972088]
+script = ExtResource("1_v5awi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1157389774]
+shape = SubResource("CircleShape2D_kwqjx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=124868943]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

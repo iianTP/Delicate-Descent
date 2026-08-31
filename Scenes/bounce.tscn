@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dkgjh0xppuj5"]
+
+[ext_resource type="Script" uid="uid://dpwexleu822q4" path="res://Scripts/Interactables/Bounce.cs" id="1_2jwde"]
+[ext_resource type="Texture2D" uid="uid://bmh35f27sn1k0" path="res://Assets/bounce.png" id="2_exxh0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xb7q5"]
+size = Vector2(128, 20)
+
+[node name="Bounce" type="Area2D" unique_id=320651802]
+script = ExtResource("1_2jwde")
+bounceForce = 1000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=425388748]
+shape = SubResource("RectangleShape2D_xb7q5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1387685282]
+position = Vector2(0, -6)
+texture = ExtResource("2_exxh0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

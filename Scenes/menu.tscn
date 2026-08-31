@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dngjm7byk34js"]
+
+[ext_resource type="Script" uid="uid://cfbfu1ko0u8hc" path="res://Scripts/Menu.cs" id="1_1rerr"]
+[ext_resource type="PackedScene" uid="uid://cjv5enumw6gsm" path="res://Scenes/map.tscn" id="2_xhh6f"]
+
+[node name="Menu" type="Control" unique_id=639485236 node_paths=PackedStringArray("play")]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 1
+script = ExtResource("1_1rerr")
+map = ExtResource("2_xhh6f")
+play = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=1238507705]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -45.0
+offset_right = 52.0
+offset_bottom = -14.0
+scale = Vector2(15.96, 15.96)
+mouse_filter = 1
+text = "PLAY"
+flat = true
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://di6q4f57oq33j"]
+
+[ext_resource type="Script" uid="uid://c323w24otfh31" path="res://Scripts/DeathWall.cs" id="1_4o0o8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_awk2l"]
+normal = Vector2(0, 1)
+
+[node name="DeathWall" type="Node2D" unique_id=431208208]
+script = ExtResource("1_4o0o8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=155613804]
+offset_left = -21936.0
+offset_top = -18380.0
+offset_right = 22014.0
+color = Color(1, 0, 0, 0.39215687)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1130359597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1513765519]
+shape = SubResource("WorldBoundaryShape2D_awk2l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
