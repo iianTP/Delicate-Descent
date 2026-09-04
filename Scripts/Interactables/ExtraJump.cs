@@ -23,6 +23,7 @@ public partial class ExtraJump : Area2D
 	{
 		if (playerInArea && Input.IsActionJustPressed("jump"))
 		{
+			playerBody.IsJumping = true;
 			playerBody.LinearVelocity = direction * force + (Vector2.Right * playerBody.LinearVelocity);
 		}
 	}
